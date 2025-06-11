@@ -20,4 +20,4 @@ export const tfjsSpinTip = computed(() => {
   return `Loading model... ${(tfjsProgress.value * 100).toFixed(2)}%`
 })
 
-export const globalActiveKey = ref('1')
+export const globalActiveKey = ref('4')

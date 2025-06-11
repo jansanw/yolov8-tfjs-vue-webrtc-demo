@@ -11,6 +11,7 @@ export default ({ mode }: ConfigEnv): UserConfig => {
   const root = process.cwd()
   const env = loadEnv(mode, root)
   return {
+    base: '/yolo/',
     server: {
       host: env.VITE_HOST,
       port: +env.VITE_PORT,
@@ -33,16 +34,16 @@ export default ({ mode }: ConfigEnv): UserConfig => {
       },
     },
     build: {
-      sourcemap: true,
+      sourcemap: false,
     },
     plugins: [
       vue({
         reactivityTransform: true,
       }),
-  
+
       // https://github.com/hannoeru/vite-plugin-pages
       Pages(),
-  
+
       // https://github.com/antfu/unplugin-auto-import
       AutoImport({
         resolvers: [ArcoResolver()],
@@ -58,12 +59,12 @@ export default ({ mode }: ConfigEnv): UserConfig => {
         ],
         vueTemplate: true,
       }),
-  
+
       // https://github.com/antfu/vite-plugin-components
       Components({
         dts: true,
       }),
-  
+
       // https://github.com/antfu/unocss
       // see unocss.config.ts for config
       Unocss(),

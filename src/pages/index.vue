@@ -10,9 +10,9 @@ onMounted(() => {
   <div>
     <a-typography :style="{ marginTop: '-40px' }">
       <a-typography-title>
-        yolov8-tfjs-vue-webrtc-demo
+        yolov8-tfjs-vue
       </a-typography-title>
-      <ASpin :loading="tfjsLoading" class="w-960px mx-auto" :tip="tfjsSpinTip">
+      <ASpin :loading="tfjsLoading" class="w-360px mx-auto" :tip="tfjsSpinTip">
         <a-tabs v-model:active-key="globalActiveKey" lazy-load>
           <a-tab-pane key="1" title="WebRTC">
             <TabsWebRTC />
